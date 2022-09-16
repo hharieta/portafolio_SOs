@@ -89,3 +89,68 @@ TESKZC0XvTetK0S9xNwm25STk5iWrBvP
 exit
 ```
 
+## Level 8 `->` 9
+
+```bash
+ls
+#cat data.txt | uniq -c
+#sort data.txt | uniq
+#sort data.txt | uniq -c
+#awk '!x[$0]++' data.txt
+#grep -wo data.txt | sort data.txt | uniq -c
+#grep -wo data.txt | sort data.txt | uniq -c | awk '{if ($? == 0) print}'
+#grep -wo data.txt | sort data.txt | uniq -c | awk '$1 ~ /1/ {print}' data.txt
+#grep -wo data.txt | sort data.txt | uniq -c | awk '$1 == "1" {print $2}' data.txt
+#grep -wo data.txt | sort data.txt | uniq -c | awk '$1 == "1" {print $2}'
+#EN632PlfYiZbn3PhVK3XOGSlNInNE00t
+sort data.txt | uniq -c | awk '$1 == 1 {print $2}'
+EN632PlfYiZbn3PhVK3XOGSlNInNE00t
+exit
+```
+
+## Level 9 `->` 10
+
+```bash
+ls
+#cat data.txt
+#grep "=====" data.txt
+#xxd data.txt
+#xxd data.txt | awk '{print $10}'
+#xxd data.txt | awk '$10 ~ !/^==/ {print $10}'
+#xxd data.txt | awk '($10 ~ /^[A-Za-z0-9\s]/ {print $10}'
+#xxd data.txt | awk '($10 !~ /^=*/) && ($10 !~ /^.*/) {print $10}'
+#xxd data.txt | awk '$10 !~ /*..*/ {print $10}' | grep -A 1 "========"
+#xxd data.txt | awk '$10 !~ /^..*/ {print $10}' | grep -A 1 "========"
+#xxd data.txt | awk '$10 !~ /...*/ {print $10}' | grep -A 1 "====="
+#xxd data.txt | awk '{print $10}' | grep -A 1 "="
+#xxd data.txt | awk '{print $10}' | grep -A 1 "^="
+#xxd data.txt | awk '{print $10}' | grep -A 1 "^=" | tail -1
+#6J3kTb8A7j9Lgryw
+#6J3kTb8A7j9LgrywtEUlyyp6s
+strings data.txt | awk '$1 ~/=/ {print $2}'
+strings data.txt | awk '$1 ~ /=/ {print $2}' | grep "^G"
+G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+exit
+```
+
+## Level 10 `->` 11
+
+```bash
+base64 -d data.txt
+base64 -d data.txt | awk '{print $4}'
+6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+exit
+```
+
+## Level 11 `->` 12
+
+![ejemplo de rotación](assets/letras.jpg)
+
+```bash
+#cat data.txt
+#base64 -d data.txt | tr "A-Za-z" "N-ZA-Mn-za-m"
+#cat data.txt | tr "A-Za-z" "N-ZA-Mn-za-m"
+cat data.txt | tr "A-Za-z" "N-ZA-Mn-za-m" | awk '{print $4}'
+JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+exit
+```
