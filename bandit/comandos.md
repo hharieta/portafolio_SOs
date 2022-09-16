@@ -154,3 +154,97 @@ cat data.txt | tr "A-Za-z" "N-ZA-Mn-za-m" | awk '{print $4}'
 JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
 exit
 ```
+
+## Level 12 `->` 13
+
+```bash
+ls
+mkdir /tmp/gatovsky
+cp data.txt /tmp/gatovsky && cd /tmp/gatovsky
+mv data.txt data
+cat data | xxd -r > data1
+file data1
+#data1: gzip compressed data
+ls
+mv data1 data2.gz
+gzip -c data2.gz
+gzip -d data2.gz
+file data2
+#data2: bzip2 compressed data
+mv data2 data3.bz
+bzip2 -d data3.bz
+file data3
+#data3: gzip compressed data
+ls
+mv data3 data4.gz
+gzip -d data4.gz
+file data4
+#data4: POSIX tar archive
+cp data4 data4-2 # respaldo por si la cago
+mv data4 data5.tar
+tar -xf data5.tar
+ls
+./data5.bin
+file data5.bin
+#data5.bin: POSIX tar archive
+mv data5.bin data6.tar
+tar -xf data6.tar
+file data6.bin
+#data6.bin: bzip2 compressed data
+mv data6.bin data7.bz
+bzip2 -d data7.bz
+ls
+file data7
+data7: POSIX tar archive
+mv data7 data8.tar
+tar -xf data8.tar
+file data8.bin
+#data8.bin: gzip compressed data
+ls
+mv data8.bin data9.gz
+gzip -d data9.gz
+file data9
+#data9: ASCII text
+cat data9 | awk '{print $4}'
+wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
+exit
+```
+
+## Level 13 `->` 14
+
+```bash
+#ssh-keygen
+#mkdir .shh
+#ssh-copy-id -i sshkey.private bandit14@bandit
+#ssh bandit14@bandit 
+#ssh bandit14@bandit -i sshkey.private
+#ssh bandit14@localhost -i sshkey.private
+ssh bandit14@localhost -i sshkey.private -p 2220
+```
+
+## Level 14 `->` 15
+
+```bash
+cat /etc/bandit_pass/bandit14 
+fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+#nc "fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq" localhost 30000
+cat /etc/bandit_pass/bandit14 | nc localhost 30000
+jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+exit
+exit
+```
+
+## Level 15 `->` 16
+
+```bash
+cat /etc/bandit_pass/bandit15 
+openssl s_client -connect localhost:30001
+#cat /etc/bandit_pass/bandit15 | openssl s_client -connect localhost:30001
+#cat /etc/bandit_pass/bandit15 | openssl aes-256-cbc localhost:30001
+#cat /etc/bandit_pass/bandit15 | openssl aes-256-cbc s_client localhost:30001
+#cat /etc/bandit_pass/bandit15 | openssl -ign_eof localhost:30001
+cat /etc/bandit_pass/bandit15 | openssl s_client -ign_eof localhost:30001
+Correct!
+JQttfApK4SeyHwDlI9SXGR50qclOAil1
+exit
+```
