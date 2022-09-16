@@ -12,9 +12,9 @@ exit
 ## Level 1 `->` 2
 
 ```bash
-du -a
-cat $HOME/readme
-NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
+find . -type f -name - 2> /dev/null
+cat ~/-
+rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
 exit
 ```
 
