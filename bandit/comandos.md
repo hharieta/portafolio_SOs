@@ -5,7 +5,7 @@
 ```bash 
 du -a
 cat $HOME/readme
-NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
+********************************
 exit
 ```
 
@@ -14,7 +14,7 @@ exit
 ```bash
 find . -type f -name - 2> /dev/null
 cat ~/-
-rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
+********************************
 exit
 ```
 
@@ -23,7 +23,7 @@ exit
 ```bash
 du -a
 cat ./"spaces in this filename"
-aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+********************************
 exit
 ```
 
@@ -32,7 +32,7 @@ exit
 ```bash
 ls -a ~/inhere
 cat ~/inhere/.hidden
-2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
+********************************
 exit
 ```
 
@@ -46,7 +46,7 @@ cd inhere
 #find . -type f -exec sh -c 'file -b {} &> /dev/null' \; -print
 find . -type f | xargs file | grep text
 cat ./-file07
-lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
+********************************
 exit
 ```
 
@@ -57,7 +57,7 @@ ls -a ~/inhere
 #find . -size 1033 -type f | xargs file | grep text
 find . -size 1033c -type f | xargs file | grep text
 cat $HOME/inhere/maybehere07/.file2 
-P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+********************************
 exit
 ```
 
@@ -69,7 +69,7 @@ exit
 find / -size 33c -user bandit7 -group bandit6 -type f 2> /dev/null
 ls -la /var/lib/dpkg/info/bandit7.password
 cat /var/lib/dpkg/info/bandit7.password
-z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
+********************************
 exit
 ```
 
@@ -85,7 +85,7 @@ ls
 #cat data.txt | grep -w millionth | head -1 | awk {$2} | print
 #cat data.txt | grep -w millionth | head -1 | awk {print $2}
 cat data.txt | grep -w millionth | head -1 | awk '{print $2}'
-TESKZC0XvTetK0S9xNwm25STk5iWrBvP
+********************************
 exit
 ```
 
@@ -102,9 +102,9 @@ ls
 #grep -wo data.txt | sort data.txt | uniq -c | awk '$1 ~ /1/ {print}' data.txt
 #grep -wo data.txt | sort data.txt | uniq -c | awk '$1 == "1" {print $2}' data.txt
 #grep -wo data.txt | sort data.txt | uniq -c | awk '$1 == "1" {print $2}'
-#EN632PlfYiZbn3PhVK3XOGSlNInNE00t
+#********************************
 sort data.txt | uniq -c | awk '$1 == 1 {print $2}'
-EN632PlfYiZbn3PhVK3XOGSlNInNE00t
+********************************
 exit
 ```
 
@@ -129,7 +129,7 @@ ls
 #6J3kTb8A7j9LgrywtEUlyyp6s
 strings data.txt | awk '$1 ~/=/ {print $2}'
 strings data.txt | awk '$1 ~ /=/ {print $2}' | grep "^G"
-G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
+********************************
 exit
 ```
 
@@ -138,7 +138,7 @@ exit
 ```bash
 base64 -d data.txt
 base64 -d data.txt | awk '{print $4}'
-6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+********************************
 exit
 ```
 
@@ -151,7 +151,7 @@ exit
 #base64 -d data.txt | tr "A-Za-z" "N-ZA-Mn-za-m"
 #cat data.txt | tr "A-Za-z" "N-ZA-Mn-za-m"
 cat data.txt | tr "A-Za-z" "N-ZA-Mn-za-m" | awk '{print $4}'
-JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+********************************
 exit
 ```
 
@@ -206,7 +206,7 @@ gzip -d data9.gz
 file data9
 #data9: ASCII text
 cat data9 | awk '{print $4}'
-wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
+********************************
 exit
 ```
 
@@ -226,10 +226,10 @@ ssh bandit14@localhost -i sshkey.private -p 2220
 
 ```bash
 cat /etc/bandit_pass/bandit14 
-fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
-#nc "fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq" localhost 30000
+********************************
+#nc "********************************" localhost 30000
 cat /etc/bandit_pass/bandit14 | nc localhost 30000
-jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+********************************
 exit
 exit
 ```
@@ -245,7 +245,7 @@ openssl s_client -connect localhost:30001
 #cat /etc/bandit_pass/bandit15 | openssl -ign_eof localhost:30001
 cat /etc/bandit_pass/bandit15 | openssl s_client -ign_eof localhost:30001
 Correct!
-JQttfApK4SeyHwDlI9SXGR50qclOAil1
+********************************
 exit
 ```
 
@@ -268,8 +268,8 @@ openssl s_client -connect localhost:31518
 #openssl s_client -connect localhost:31691
 openssl s_client -connect localhost:31790
 #openssl s_client -connect localhost:31960
-#JQttfApK4SeyHwDlI9SXGR50qclOAil1
-echo "JQttfApK4SeyHwDlI9SXGR50qclOAil1" | openssl s_client -ign_eof localhost:31518
+#********************************
+echo "********************************" | openssl s_client -ign_eof localhost:31518
 cat /etc/bandit_pass/bandit16 | openssl s_client -ign_eof localhost:31790
 cat /etc/bandit_pass/bandit16 | openssl s_client -ign_eof localhost:31790 | grep -A 26 "BEGIN RSA"  > /tmp/sshkey.private
 cat /tmp/sshkey.private
@@ -280,8 +280,8 @@ ssh -i /tmp/sshkey.private bandit17@localhost -p 2220
 
 ```bash
 diff -c passwords.new passwords.old
-cat passwords.new | grep "hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg"
-hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
+cat passwords.new | grep "********************************"
+********************************
 exit 
 exit
 ```
@@ -294,7 +294,7 @@ Byebye !
 #ssh bandit18@bandit.labs.overthewire.org -p 2220 | cat ~/readme
 #sh bandit18@bandit.labs.overthewire.org -p 2220 && cat ~/readme
 sh bandit18@bandit.labs.overthewire.org -p 2220  “cat ~/readme”
-awhqfNnAbc1naukrpqDYcF95h7HoMTrC
+********************************
 ```
 
 ## Level 19 `->` 20
@@ -309,7 +309,7 @@ groups bandit19
 #id -u
 #./bandit20-do id cat /etc/bandit_pass/bandit20
 ./bandit20-do cat /etc/bandit_pass/bandit20
-VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+********************************
 exit
 ```
 
@@ -325,17 +325,17 @@ ls
 Usage: ./suconnect <portnumber>
 #./suconnect 2220 | "cat /etc/bandit_pass/bandit20"
 #cat /etc/bandit_pass/bandit20 | ./suconnect 2220
-#"VxCazJaVykI6W36BkBU0mJTCM8rR95XT" | nc -l localhost 31002
-#"VxCazJaVykI6W36BkBU0mJTCM8rR95XT" | nc -l localhost 31002 & # proceso levantado erroneamente
+#"********************************" | nc -l localhost 31002
+#"********************************" | nc -l localhost 31002 & # proceso levantado erroneamente
 #3051766 # IDP
-echo "VxCazJaVykI6W36BkBU0mJTCM8rR95XT" | nc -l localhost 31002 &
+echo "********************************" | nc -l localhost 31002 &
 3051922 # IDP
 ps aux 
 kill 3051766 # matar proceso levantado por error
 ./suconnect 31002 # ejecutar el binario con el puerto especificado anteriormente 
-Read: VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+Read: ********************************
 Password matches, sending next password
-NvEJF7oVjkddltPSrdKEFOllh9V1IBcq
+********************************
 exit
 ```
 
@@ -352,11 +352,11 @@ cat cronjob_bandit22
 * * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
 cat /usr/bin/cronjob_bandit22.sh 
 #!/bin/bash
-chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
-cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+chmod 644 /tmp/********************************
+cat /etc/bandit_pass/bandit22 > /tmp/********************************
 
-cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
-WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff
+cat /tmp/********************************
+********************************
 exit
 ```
 
@@ -376,10 +376,10 @@ echo "Copying passwordfile /etc/bandit_pass/$myname to /tmp/$mytarget"
 cat /etc/bandit_pass/$myname > /tmp/$mytarget
 
 bash /usr/bin/cronjob_bandit23.sh
-cat /tmp/8169b67bd894ddbb4412f91573b38db3
-WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff
+cat /tmp/********************************
+********************************
 
-#md5sum /tmp/8169b67bd894ddbb4412f91573b38db3
+#md5sum /tmp/********************************
 #vim /tmp/superHacker.sh
 #ls -la /usr/bin/cronjob_bandit23.sh
 #chmod 750 /tmp/superHacker.sh
@@ -388,8 +388,8 @@ WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff
 myname=bandit23
 mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
 echo $mytarget
-8ca319486bfbbc3663ea0fbe81326349
-cat /tmp/8ca319486bfbbc3663ea0fbe81326349
-QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G
+********************************
+cat /tmp/********************************
+********************************
 exit
 ```
