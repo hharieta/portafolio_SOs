@@ -421,3 +421,262 @@ cat /tmp/wenas/pass
 ********************************
 exit
 ```
+
+## Level 24 `->` 25
+
+```bash
+#echo "VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar 0000" | nc bandit.labs.overthewire.org 30002
+#echo "VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar 0000" | openssl s_client -connect bandit.labs.overthewire.org:30002
+#ssh bandit23@bandit.labs.overthewire.org -p 2220
+#echo "VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar 0000" | openssl s_client -connect localhost:30002
+#"VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar 0000" | nc localhost 30002
+#nc localhost 30002
+
+mkdir /tmp/gatvosky23
+cd /tmp/gatovsky23
+touch passpin.txt
+vim generarpin.sh
+bash generarpin.sh
+nc localhost 30002 < /tmp/gatovsky23/passpin.txt
+Correct!
+The password of user bandit25 is ********************************
+```
+
+## Level 25 `->` 26
+
+```bash
+#ssh bandit26@localhost -i sshkey.private -p 2220 “ls -a ~/”
+#openssl s_client -connect bandit26@localhost:2220
+ls -la
+#ssh bandit26@localhost -i bandit26.sshkey -p 2220 “ls -a ~/”
+#ssh bandit26@localhost -i bandit26.sshkey -p 2220
+#ssh bandit26@localhost -i bandit26.sshkey 
+ls -la /etc/bandit_pass/
+
+cat /etc/passwd
+cat /etc/passwd | awk '$1 ~ /bandit26/ {print}'
+bandit26:x:11026:11026:bandit level 26:/home/bandit26:/usr/bin/showtext
+
+cat /usr/bin/showtext
+```
+```bash
+#!/bin/sh
+
+export TERM=linux
+
+exec more ~/text.txt
+exit 0
+```
+
+auutcilioooooo!!
+
+aplicando los hacks encontrados en google :3 porque el `ssh bandit26@localhost -i bandit26.sshkey` rechaza la conexión dado que la sesión no tiene un shell asignado, nada más un cochino mensaje en text.txt
+
+1. Reducir la terminal para que el ASCII art del mensaje que se encuentra en el archivo `text.txt` se muestren incompletas. Procedemos a establecer la conexión ssh
+
+![1](assets/1.png)
+
+2. Cuando tengamos una vista similar precionamos `v`, eso hará que el editor `Vim` abra el archivo `text.txt` lo cual nos retendrá en la sesión de `bandit26`
+
+![2](assets/2.png)
+
+![3](assets/3.png)
+
+3. Le decimos a `Vim` que nos habrá el poderosísismo `/etc/bandit_pass/bandit26`
+
+![4](assets/4.png)
+
+![5](assets/5.png)
+
+4. Guardamos el password y posteriormente asignamos una `shell` a la sesión 
+
+![6](assets/6.png)
+
+5. Ejecutamos la shell desde `Vim`
+
+![7](assets/7.png)
+
+![8](assets/8.png)
+
+## Level 26 `->` 27
+
+* Solución similar al nivel 19
+
+```bash
+ls
+bandit26@bandit:~$ ./bandit27-do cat /etc/bandit_pass/bandit27
+********************************
+exit
+exit
+```
+
+## Level 27 `->` 28
+
+```bash
+#ssh bandit27-git@localhost -p 2220
+mkdir /tmp/gatovsky27
+chmod 777 /tmp/gatovsky27
+cd /tmp/gatovsky27
+#ssh bandit27-git@localhost -p 2220 git clone bandit27-git@localhost/home/bandit27-git/repo
+#ssh bandit27-git@localhost -p 2220  ls ~/repo
+git clone ssh://bandit27-git@localhost:2220/home/bandit27-git/repo
+cd repo
+cat README
+The password to the next level is: ********************************
+exit
+```
+
+## Level 28 `->` 29
+
+```bash
+mkdir /tmp/gatovsky28
+chmod 777 /tmp/gatovsky28
+cd /tmp/gatovsky28
+git clone ssh://bandit28-git@localhost:2220/home/bandit28-git/repo
+cd repo
+ls
+cat *.md
+#xxd *.md
+#file *.md
+git log
+commit 43032edb2fb868dea2ceda9cb3882b2c336c09ec (HEAD -> master, origin/master, origin/HEAD)
+Author: Morla Porla <morla@overthewire.org>
+Date:   Thu Sep 1 06:30:25 2022 +0000
+
+#busca la última deferencia en las versiones de los commits
+git log -p -1
+diff --git a/README.md b/README.md
+index b302105..5c6457b 100644
+--- a/README.md
++++ b/README.md
+@@ -4,5 +4,5 @@ Some notes for level29 of bandit.
+ ## credentials
+ 
+ - username: bandit29
+-- password: ********************************
++- password: xxxxxxxxxx
+
+exit
+```
+
+## Level 29 `->` 30
+
+```bash
+Level 29 → 30
+
+mkdir /tmp/gatovsky29
+chmod 777 /tmp/gatovsky29
+cd /tmp/gatovsky29
+
+git clone ssh://bandit29-git@localhost:2220/home/bandit29-git/repo
+
+cd repo
+cat *.md
+git log
+git branch
+
+#NO HAY NADA EN PRODUCCIÓN? VAMOS A DEV!
+git checkout dev
+git branch
+git log -p -1
+
+diff --git a/README.md b/README.md
+index 1af21d3..a4b1cf1 100644
+--- a/README.md
++++ b/README.md
+@@ -4,5 +4,5 @@ Some notes for bandit30 of bandit.
+ ##credentials
+ 
+ - username: bandit30
+-- password: <no passwords in production!>
++- password: ********************************
+exit
+```
+
+Level 30 `->` 31
+
+```bash
+mkdir /tmp/gatovsky30
+chmod 777 /tmp/gatovsky30
+cd /tmp/gatovsky30
+git clone ssh://bandit30-git@localhost:2220/home/bandit30-git/repo
+cd repo
+cat *.md
+git log
+git branch
+#git checkout hotfix
+#git checkout issuses
+
+#verifica las etiquetas de los nodos importantes de git!
+git tag
+git show secret
+********************************
+exit
+```
+
+## Level 31 `->` 32
+
+```bash
+mkdir /tmp/gatovsky31
+chmod 777 /tmp/gatovsky31
+cd /tmp/gatovsky31
+git clone ssh://bandit31-git@localhost:2220/home/bandit31-git/repo
+cd repo
+ls
+cat *.md
+
+vim key.txt
+May I come in?
+
+#git add *.txt
+vim .gitignore
+
+#borre el  *.txt 
+
+git add .
+git commit -m “key”
+git push ssh://bandit31-git@localhost:2220/home/bandit31-git/repo master
+
+remote: Well done! Here is the password for the next level:
+remote: ******************************** 
+exit
+```
+
+## Level 32 `->` 33
+
+```bash
+#ls
+#sh
+#man
+#bash
+#shell
+#clear
+Ctrl + C
+ls -a
+#file uppershell
+#xdd uppershell
+#xdd uppershell | sort uppershell | uniq -c
+#./uppershell id
+whoami
+bandit33
+
+#Ahuvio!
+cat /etc/bandit_pass/bandit33
+********************************
+exit
+```
+
+## Level 33
+
+```bash
+ls
+cat README.txt
+Congratulations on solving the last level of this game!
+
+At this moment, there are no more levels to play in this game. However, we are constantly working
+on new levels and will most likely expand this game with more levels soon.
+Keep an eye out for an announcement on our usual communication channels!
+In the meantime, you could play some of our other wargames.
+
+If you have an idea for an awesome new level, please let us know!
+```
