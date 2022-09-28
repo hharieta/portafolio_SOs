@@ -144,7 +144,7 @@ exit
 
 ## Level 11 `->` 12
 
-![ejemplo de rotación](assets/letras.jpg)
+![ejemplo de rotación](../assets/bandit/letras.jpg)
 
 ```bash
 #cat data.txt
@@ -492,25 +492,25 @@ aplicando los hacks encontrados en google :3 porque el `ssh bandit26@localhost -
 
 2. Cuando tengamos una vista similar precionamos `v`, eso hará que el editor `Vim` abra el archivo `text.txt` lo cual nos retendrá en la sesión de `bandit26`
 
-![2](assets/2.png)
+![2](../assets/bandit/2.png)
 
-![3](assets/3.png)
+![3](../assets/bandit/3.png)
 
 3. Le decimos a `Vim` que nos habrá el poderosísismo `/etc/bandit_pass/bandit26`
 
-![4](assets/4.png)
+![4](../assets/bandit/4.png)
 
-![5](assets/5.png)
+![5](../assets/bandit/5.png)
 
 4. Guardamos el password y posteriormente asignamos una `shell` a la sesión 
 
-![6](assets/6.png)
+![6](../assets/bandit/6.png)
 
 5. Ejecutamos la shell desde `Vim`
 
-![7](assets/7.png)
+![7](../assets/bandit/7.png)
 
-![8](assets/8.png)
+![8](../assets/bandit/8.png)
 
 ## Level 26 `->` 27
 
