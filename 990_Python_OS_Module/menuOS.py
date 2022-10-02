@@ -25,7 +25,9 @@ def opciones(opcion):
             print("\n\033[1;32m [*]" + " \033[2;36m variables de entorno del sistema en bytes"+'\033[0;m')
             print("\033[1;33m [*]" + " \033[1;33m environb solo está disponible si support_bytes_environ es" + "\033[1;35m True" +'\033[0;m')
         case "6":
-            print(os.chdir("/home/gatovsky"))
+            os.chdir("/home/gatovsky")
+            print(os.getcwd())
+
         case _:
             print("\n\033[1;31m [*]" + " \033[1;33m Opción no válida"+'\033[0;m')
             exit
