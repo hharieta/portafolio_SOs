@@ -1,8 +1,9 @@
+from fileinput import fileno
 import os
 import asyncio
 import sys
 from sys import stderr, stdout
-import re
+import re, fileinput
 
 def opciones(opcion):
     match opcion:
@@ -28,6 +29,11 @@ def opciones(opcion):
             os.chdir("/home/"+os.getlogin())
             print(os.getcwd())
             print("\n\033[1;32m [*]" + " \033[2;36m cambio de derectorio "+'\033[0;m')
+        case "7":
+            fd = os.open("/home/"+os.getlogin()+"/portafolio_SOs", os.O_RDONLY)
+            os.fchdir(fd)
+            print(os.getcwd())
+            print("\n\033[1;32m [*]" + " \033[2;36m cambio de derectorio con un file descriptor"+'\033[0;m')
 
         case _:
             print("\n\033[1;31m [*]" + " \033[1;33m Opción no válida"+'\033[0;m')
@@ -52,7 +58,8 @@ def menu():
             3) os.ctermid()
             4) os.environ
             5) os.environb
-            6) os.chdir
+            6) os.chdir()
+            7) os.fchdir()
             0) exit
         """)
         opcion = input("\n> ")
