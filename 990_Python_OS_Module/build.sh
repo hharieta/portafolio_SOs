@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Author: Gatovsky
 
 # Colors
@@ -13,22 +13,53 @@ greyColor="\e[0;37m\033[1m"
 
 
 DIR=$HOME/portafolio_SOs/990_Python_OS_Module
-ENV=env/bin
+ENV_NAME=env
 
-if [[ $(pwd) = $DIR ]] && [[ -d env ]]; then
-		echo -e "${greenColor}[*]${endColor}${turquoiseColor} 'env' ya existe. Activando entorno virtual...${endColor}"
-		sleep 0.5
-		source $DIR/$ENV/activate
-else
-    echo -e "${greenColor}[*]${endColor}${turquoiseColor} Creando entorno virtual...${endColor}"
-    sleep 0.5
+usage() {
+    cat << EOF
+        Uso: $0 [ OPTIONS ]
 
-    python3 -m venv env
+            -v: Crea un entorno virtual de nombre $ENV_NAME por defecto
+            -a: Activa el entorno virtual $ENV_NAME
+            -d: Desactiva el entorno virtual $ENV_NAME
+            -r: Elimina el entorno virtual $ENV_NAME de la ruta actual
+            -h: muestra la ayuda
 
-	echo -e "${greenColor}[*]${endColor}${turquoiseColor} Activando entorno virtual...${endColor}"
-    sleep 0.5
+        Ejemplo: $0 -va
+EOF
+    exit 0
+}
 
-    source $DIR/$ENV/activate
-fi
 
+### MAIN ###
+while getopts "vadrh" arg; do
+    case "${arg}" in
+        v)
+            echo -e "${greenColor}[*]${endColor}${turquoiseColor} Creando entorno virtual...${endColor}"
+            sleep 0.5
+            python3 -m venv $ENV_NAME
+            ;;
+        a)
+            echo -e "${greenColor}[*]${endColor}${turquoiseColor} Activando entorno virtual...${endColor}"
+            sleep 0.5
+            source $ENV_NAME/bin/activate
+            ;;
+        d)
+            echo -e "${greenColor}[*]${endColor}${turquoiseColor} Desactivando entorno virtual...${endColor}"
+            sleep 0.5
+            deactivate
+            ;;
+        r)
+            echo -e "${redColor}[*]${endColor}${yellowColor} Eliminando entorno virtual...${endColor}"
+            sleep 0.5
+            rm -rf $DIR/$ENV_NAME
+            ;;
+        h)
+            usage
+            ;;
+        *)
+            echo -e "Mira $0 -h\n"
+            ;;
+    esac
+done
 
