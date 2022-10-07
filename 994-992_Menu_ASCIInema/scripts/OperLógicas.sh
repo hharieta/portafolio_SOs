@@ -13,8 +13,8 @@ test ${otrobool} || echo "Ahora es falso"
 #who && ps axf && echo "OK"
 ## comparaciones : eq, ne, lt, le, gt, or ge
 valor=6
-test $valor le 6 && echo "Se cumple"
+test $valor -le 6 && echo "Se cumple"
 # Asignaciones
 nuevo=${valor}
-test ${nuevo} eq ${valor} && echo "Son los mismo"
+test ${nuevo} -eq ${valor} && echo "Son los mismo"
 echo "Ahora ${nuevo} es lo mismo que ${valor}"
