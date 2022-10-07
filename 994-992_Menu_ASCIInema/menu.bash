@@ -17,7 +17,7 @@ fin_color='\033[0;m'
 garage=scripts
 
 function opciones {
-    cat << EOF
+    lolcat << EOF
     **************************************
     
     • ▌ ▄ ·. ▄▄▄ . ▐ ▄ ▄• ▄▌     ▄▄ •  ▄▄▄·▄▄▄▄▄       ▌ ▐·.▄▄ · ▄ •▄  ▄· ▄▌
@@ -49,7 +49,7 @@ while true
 do
     opciones
 
-    echo -e "${morado_negrita}Seleciona el script ${cian_debil} 1-19 ${fin_color} | ${cian_debil} 0: ${amarillo_negrita}Salir del menú ${fin_color} | >"
+    echo -e "${morado_negrita}Seleciona el script ${cian_debil} 1-18 ${fin_color} | ${cian_debil} 0: ${amarillo_negrita}Salir del menú ${fin_color} | >"
     read input
 
     case $input in
