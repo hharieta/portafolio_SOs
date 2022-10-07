@@ -13,9 +13,12 @@ funcion () {
 
 trap "funcion" INT QUIT TSTP
 
+breaker=0
 # Un bucle sin fin para probar
-while true
+while [[ breaker -lt 8 ]]
 do
-  sleep 2
+  sleep 1
   echo "ufff qué sueño..."
+
+  ((breaker++))
 done
