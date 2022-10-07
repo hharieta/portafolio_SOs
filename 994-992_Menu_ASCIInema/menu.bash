@@ -29,9 +29,9 @@ function opciones {
     5)  VariablesUso.sh            15) Funciones.sh
     6)  OperAritméticas.sh         16) Librerías.sh
     7)  OperLógicas.sh             17) Señales.sh
-    8)  Condicionales.sh           18) Funciones.sh
-    9)  ComprobarFicheros.sh       19) ColoresANSI.sh
-    10) CASE.sh                    0)  SALIR
+    8)  Condicionales.sh           18) ColoresANSI.sh
+    9)  ComprobarFicheros.sh       0)  SALIR
+    10) CASE.sh
   
 EOF
 }
@@ -102,9 +102,6 @@ do
              source $garage/Señales.sh
              ;;
          "18")
-             source $garage/Funciones.sh
-             ;;
-         "19")
              source $garage/ColoresANSI.sh
              ;;
         *) 
