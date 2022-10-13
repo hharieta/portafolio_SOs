@@ -1,3 +1,4 @@
+from ast import Bytes
 import os
 import sys
 import colors as c
@@ -26,7 +27,17 @@ def submenup():
             9)  os.fsencode()
             10) os.fsdecode()
             11) os.fspath()
-            12) Class os.PathLike()
+            12) os.getenv()
+            13) os.getenvb()
+            14) os.get_exec_path()
+            15) os.getegid()
+            16) os.geteuid()
+            17) os.getgid()
+            18) os.getgrouplist()
+            19) os.getgroups()
+            20) os.getlogin()
+            21) os.getpgid()
+            22) os.getpgrp()
             0) exit
         """)
         opcion = input("\n> ")
@@ -80,7 +91,41 @@ def process(op):
             print(os.fspath(os.getcwd()))
             print("\n{}[*] {}Devuelve la representación del sistema de archivos de la ruta.{}".format(c.verde_negrita(), c.cian_debil(), c.fin_color()))
         case "12":
-            pass
+            i = input("Escribe una variable de entorno Unix: ")
+            print(os.getenv(i))
+            print("\n{}[*] {}Devuelve el valor de la clave de la variable de entorno como una cadena si existe.{}".format(c.verde_negrita(), c.cian_debil(), c.fin_color()))
+        case "13":
+            i = input('Escribe una variable de entorno Unix: ')
+            key = bytes(i, 'utf-8')
+            print(os.getenvb(key))
+            print("\n{}[*] {}Devuelve el valor de la clave de la variable de entorno en bytes si existe.{}".format(c.verde_negrita(), c.cian_debil(), c.fin_color()))
+        case "14":
+            print(os.get_exec_path(env=None))
+            print("\n{}[*] {}Devuelve la lista de directorios en los que se buscará un ejecutable.{}".format(c.verde_negrita(), c.cian_debil(), c.fin_color()))
+        case "15":
+            print(os.getegid())
+            print("\n{}[*] {}Devuelve el ID de grupo efectivo del proceso actual.{}".format(c.verde_negrita(), c.cian_debil(), c.fin_color()))
+        case "16":
+            print(os.geteuid())
+            print("\n{}[*] {}Devuelve el ID de usuario efectivo del proceso actual.{}".format(c.verde_negrita(), c.cian_debil(), c.fin_color()))
+        case "17":
+            print(os.getgid())
+            print("\n{}[*] {}Devuelve el ID de grupo real del proceso actual.{}".format(c.verde_negrita(), c.cian_debil(), c.fin_color()))
+        case "18":
+            print(os.getgrouplist(os.getlogin(), os.getegid()))
+            print("\n{}[*] {}Devuelve la lista de ID de grupo a los que pertenece el usuario.{}".format(c.verde_negrita(), c.cian_debil(), c.fin_color()))
+        case "19":
+            print(os.getgroups())
+            print("\n{}[*] {}Devuelve una lista de ID de grupo complementarios asociados con el proceso actual.{}".format(c.verde_negrita(), c.cian_debil(), c.fin_color()))
+        case "20":
+            print(os.getlogin())
+            print("\n{}[*] {}Devuelve el nombre del usuario que inició sesión en el terminal de control del proceso.{}".format(c.verde_negrita(), c.cian_debil(), c.fin_color()))
+        case "21":
+            print(os.getpgid(os.getegid()))
+            print("\n{}[*] {}Devuelve el ID de proceso de grupo de los procesos con el PID.{}".format(c.verde_negrita(), c.cian_debil(), c.fin_color()))
+        case "22":
+            print(os.getpgrp())
+            print("\n{}[*] {}Devuelve el id del grupo de procesos actual.{}".format(c.verde_negrita(), c.cian_debil(), c.fin_color()))
         case _:
             print("\n{}[*] {}Opción no válida {}".format(c.rojo_negrita(), c.amarillo_negrita(), c.fin_color()))
             exit
