@@ -89,4 +89,4 @@ object BufferOverflow {
 ``` 
 
 ## ASCIInema: demostración de código en scala 🎥
-[asciinema](https://asciinema.org/a/Fqp1i9k2Du3nSBoP8VG42khG6)
+![asciinema](https://asciinema.org/a/Fqp1i9k2Du3nSBoP8VG42khG6)
