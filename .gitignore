@@ -2,4 +2,7 @@ env/
 .git/
 .vscode/
 .idea/
+.metals/
+*.out
+pocbuff
 secrets/
